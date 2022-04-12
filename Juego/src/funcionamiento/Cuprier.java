@@ -9,10 +9,15 @@ public class Cuprier {
     String[] palos = {"Corazón", "Espadas", "Trebol", "Diamante","No hay"};
     Carta[] baraja = new Carta[60];
     Pila<Carta> barajaRevuelta = new Pila<>();
+    Carta[] barajaTirada = new Carta[60];
+    int cartasTiradas =0;
 
     public Cuprier(){
 
     }
+
+
+
 
     public void crearBaraja(){
         
@@ -84,9 +89,12 @@ public class Cuprier {
     } 
 
     public Carta repartir(){
-        return barajaRevuelta.pop();
+        Carta temp = barajaRevuelta.pop();
+        barajaTirada[cartasTiradas] = temp;
+        cartasTiradas++;
+        return temp;
     }
     
-
+  
     
 }

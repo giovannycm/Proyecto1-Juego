@@ -8,9 +8,8 @@ public class Jugador{
     //Atributos
     private String nombre;
     private Carta[] mano;
-    //private int numjugadores;
     private int apuestas;
-    private int aciertos; //apuestas ganadas
+    private int aciertos; //Trucos ganados
 
     //Metodo constructor
     public Jugador(String nombre){
@@ -59,6 +58,24 @@ public class Jugador{
             System.out.println(i +"  " +mano[i].toString());
         }
 
+    }
+
+
+    public void sacarCarta(int a){
+        
+        Carta[] temp = new Carta[mano.length - 1];
+        int j = 0;
+        for (int i = 0; i < temp.length; i++) {
+            if (i == a) {
+                j++;
+                temp[i]= mano[j];
+            } else {
+                temp[i]= mano[j];
+            }
+            j++;
+        }
+
+        mano = temp;
     }
 
 
